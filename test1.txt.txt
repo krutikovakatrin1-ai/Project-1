@@ -1,1 +1,57 @@
 Крутикова Екатерина
+
+
+#include <iostream>
+using namespace ::std;
+
+int* qwe(int B[])
+{
+	int* C;
+	C = new int [9];
+	for (int i = 0; i < 9; i++)
+	{
+		C[i] = B[i];
+	}
+
+		for (int i = 0; i < 9; i++)
+	{
+		if (C[i] < 10)
+			C[i] = 0;
+	}
+	return C;
+	
+}
+
+int kol(int B[])
+{
+	int S = 0;
+	for (int i = 0; i < 9; i++)
+	{
+		if (B[i] < 10)
+			S++;
+	}
+	return S;
+}
+
+int main()
+{
+	system("chcp 1251");
+	int B[9]; 
+	int* C; 
+
+	cout << "Введите целые числа для массива B через пробел ";
+	for (int i = 0; i < 9; i++)
+		cin >> B[i];
+	cout << "Массив B ";
+	for (int i = 0; i < 9; i++)
+		cout << B[i] << " ";
+	cout << endl;
+	C = qwe(B);
+	cout << "Массив С ";
+	for (int i = 0; i < 9; i++)
+		cout << C[i] << " ";
+	cout << endl;
+
+	int N = kol(B);
+	cout << "Количество элементов массива В меньше десяти " << N << endl;
+}
